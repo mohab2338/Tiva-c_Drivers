@@ -18,6 +18,9 @@
  /*************************************************
  * GLOBAL MACROS
  *************************************************/
+ #define NULL (void*)0
+ 
+ 
  #define TRUE   			1
  #define FALSE  			0
  
@@ -33,7 +36,11 @@
  #define STD_ON				1
  #define STD_OFF	   	0
  
- 
- 
+ /*************BIT MATH***********************/
+#define SET_BIT(Reg,Bit)		( (Reg) |=  ( (1) << (Bit) ) )
+#define CLR_BIT(Reg,Bit)		( (Reg) &= ~( (1) << (Bit) ) )
+#define TGL_BIT(Reg,Bit)		( (Reg) ^=  ( (1) << (Bit) ) )
+#define GET_BIT(Reg,Bit)		( (Reg) >>   (Bit)&( 1 ) )
+/******************END BIT MATH **************/ 
  
 #endif /*STD_TYPES_H*/ 
